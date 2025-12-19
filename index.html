@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فال حافظ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        section {
+            display: grid;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #image {
+            width: 300px;
+            aspect-ratio: 6/9;
+            object-fit: contain;
+            height: auto;
+        }
+
+        button {
+            padding: 16px 20px;
+            width: 240px;
+            margin: 0 auto;
+            background-color:rgb(125 31 32);
+            color: white;
+            font-weight: bold;
+            font-size: 2em;
+            border: none;
+            border-radius: 9999px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width:1000px) {
+            section{
+                margin:0 8%;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(2,1fr);
+                gap: 32px;
+            }
+            #image {
+                width: 450px;
+                grid-row: 1/3;
+            }
+            h1{
+                align-self: end;
+            }
+            button{
+                align-self: self-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>فال حافظ و نگاهی به آینده</h1>
+        <img id="image" src="./images/base.png" alt="فال حافظ">
+        <button id="getFalBtn">گرفتن فال</button>
+    </section>
+
+    <script>
+        // آرایه‌ای از مسیر تصاویر فال حافظ
+        const falImages = [
+            './images/pic1.png', './images/pic2.png', './images/pic3.png',
+            './images/pic4.png', './images/pic5.png', './images/pic6.png',
+            './images/pic7.png', './images/pic8.png', './images/pic9.png',
+            './images/pic10.png', './images/pic11.png', './images/pic12.png',
+            './images/pic13.png', './images/pic14.png', './images/pic15.png',
+            './images/pic16.png', './images/pic17.png', './images/pic18.png',
+            './images/pic19.png', './images/pic20.png', './images/pic21.png',
+            './images/pic22.png', './images/pic23.png', './images/pic24.png',
+            './images/pic25.png', './images/pic26.png', './images/pic27.png',
+            './images/pic28.png', './images/pic29.png', './images/pic30.png',
+            './images/pic31.png', './images/pic32.png', './images/pic33.png',
+            './images/pic34.png', './images/pic35.png',
+        ];
+
+        const imageEl = document.getElementById('image');
+        const buttonEl = document.getElementById('getFalBtn');
+
+        buttonEl.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * falImages.length);
+            imageEl.src = falImages[randomIndex];
+            buttonEl.textContent = 'گرفتن فال مجدد';
+        });
+    </script>
+</body>
+
+</html>
